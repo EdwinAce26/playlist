@@ -16,25 +16,30 @@
 //****************** SERIOUSLY TEST USING console.log()!!! ******************
 
 // Songs
+var title = $("#title").val();
+var artist = $("#artist").val();
+var mp3 = $("#mp3Url").val()
+var image = $("#imageUrl").val()
+
+
 var mySong = {
-	"title":"24K Magic",
-	"artist":"Bruno Mars",
-	"mp3-url":"https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P",
-	"image-url":"https://images-na.ssl-images-amazon.com/images/I/71Gr9aCHQfL._SY355_.jpg",
+	"title": title ,
+	"artist": artist,
+	"mp3-url":mp3,
+	"image-url":image,
 }
 
 var myPlayList = [
 	{
-		"title":"24K Magic",
-		"artist":"Bruno Mars",
-		"mp3-url":"https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P",
-		"image-url":"https://images-na.ssl-images-amazon.com/images/I/71Gr9aCHQfL._SY355_.jpg",
-	},
+		"title":"",
+		"artist":"",
+		"mp3-url":,
+		"image-url":,
 	{
-		"title":"Sir Duke",
-		"artist":"Stevie Wonder",
-		"mp3-url":"https://open.spotify.com/track/2udw7RDkldLFIPG9WYdVtT",
-		"image-url":"https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/Songs_in_the_key_of_life.jpg/220px-Songs_in_the_key_of_life.jpg",
+		"title":"",
+		"artist":",
+		"mp3-url":"",
+		"image-url":",
 	},
 	{
 		"title":"Sorry",
@@ -51,6 +56,32 @@ var myPlayList = [
 $( document ).ready(function() {
   
 
+console.log(myPlayList);
+
+	displaySongs(myPlayList)
+
+
+
+	//READ All
+	function displaySongs(songs){
+		clearAllSongs()
+		for(var i = 0; i < songs.length; i++){	
+			$(".result-text").append(
+			<div id="' + i + '">
+				<div class="col-md-8" id="info">
+					<h3 id="title">' + songs[i]["title"] + '</h3>
+					<a href=' + songs[i]["mp3-url"] + '> Listen </a>
+				</div>
+				<div class="col-md-4" >
+					<img src=' + songs[i]["image-url"] + '>
+					<span class="glyphicon glyphicon-remove delete" id="' + i + '"></span>\
+					<span class="glyphicon glyphicon-edit update" id="' + i + '"></span>\
+				</div>
+				<div class="col-md-12"><hr></div>
+			</div>
+			);
+	   	}
+	}
 
 
 });
@@ -68,7 +99,22 @@ function clearList(){
 }
 
 function addSong(){
- 
-  
-  
-}
+ var newSong = {
+			"title": $('#title').val(),
+			"artist": $('#artist').val(),
+		
+			"mp3Url": $('#mp3Url').val(),
+			"imageUrl": $('#imageUrl').val(),
+			"genres":[
+				$('#title').val()
+			]
+		}
+		myPlayList.push(newSong);
+	}
+
+	$("#createSong").click(function(){
+
+		createSong();
+		displaySongs(myPlayList)
+
+	});
