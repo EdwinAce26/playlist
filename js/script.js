@@ -1,21 +1,14 @@
-// quick fix for Cloud9 warning:
-/* global $ */
-
-// Class 2:
-// Complete displayList() to show a single song in the list
-
-// Class 2:
-// Complete displayList() to show all the songs in the list
-// Complete clearList() funcion
-
-// Class 3:
-// Complete the addSong function to take an input from input boxes and push a new song to the playlist array. 
-
-// *************************** YOUR CODE BELOW *******************************
-//******************TEST EARLY AND OFTEN USING console.log() ******************
-//****************** SERIOUSLY TEST USING console.log()!!! ******************
 
 // Songs
+// DOCUMENT READY FUNCTION
+$( document ).ready(function() {
+  
+
+console.log(myPlayList);
+
+	displaySongs(myPlayList)
+
+
 var title = $("#title").val();
 var artist = $("#artist").val();
 var mp3 = $("#mp3Url").val()
@@ -31,15 +24,16 @@ var mySong = {
 
 var myPlayList = [
 	{
-		"title":"",
-		"artist":"",
-		"mp3-url":,
-		"image-url":,
+		"title":"Waterfalls",
+		"artist":"TLC",
+		"mp3-url":"https://youtu.be/8WEtxJ4-sh4",
+		"image-url":"https://www2.shutterstock.com/blog/wp-content/uploads/sites/5/2017/04/chinafalls1-1024x681.jpg",
+	},
 	{
-		"title":"",
-		"artist":",
-		"mp3-url":"",
-		"image-url":",
+		"title":"Mine",
+		"artist":"Bazzi",
+		"mp3-url":"https://youtu.be/Gc71AmT_b2k",
+		"image-url":"https://d1kvcwstn4nsit.cloudfront.net/posts/112545-340x340.jpg",
 	},
 	{
 		"title":"Sorry",
@@ -49,18 +43,6 @@ var myPlayList = [
 	}
 
 ]
-
-
-
-// DOCUMENT READY FUNCTION
-$( document ).ready(function() {
-  
-
-console.log(myPlayList);
-
-	displaySongs(myPlayList)
-
-
 
 	//READ All
 	function displaySongs(songs){
@@ -73,11 +55,11 @@ console.log(myPlayList);
 					<a href=' + songs[i]["mp3-url"] + '> Listen </a>
 				</div>
 				<div class="col-md-4" >
-					<img src=' + songs[i]["image-url"] + '>
-					<span class="glyphicon glyphicon-remove delete" id="' + i + '"></span>\
-					<span class="glyphicon glyphicon-edit update" id="' + i + '"></span>\
+					<img src=' + songs[i]["image-url"] + '/>
+					<span class="glyphicon glyphicon-remove delete" id="' + i + '"></span>
+					<span class="glyphicon glyphicon-edit update" id="' + i + '"></span>
 				</div>
-				<div class="col-md-12"><hr></div>
+				<div class="col-md-12"><hr></hr></div>
 			</div>
 			);
 	   	}
@@ -86,7 +68,7 @@ console.log(myPlayList);
 
 });
 
-function displayList(){
+function displaylist(){
 
 
   
@@ -94,20 +76,14 @@ function displayList(){
 
 function clearList(){
   
-  
-  
 }
 
 function addSong(){
  var newSong = {
 			"title": $('#title').val(),
 			"artist": $('#artist').val(),
-		
 			"mp3Url": $('#mp3Url').val(),
 			"imageUrl": $('#imageUrl').val(),
-			"genres":[
-				$('#title').val()
-			]
 		}
 		myPlayList.push(newSong);
 	}
