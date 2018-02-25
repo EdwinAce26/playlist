@@ -16,10 +16,17 @@ var image = $("#imageUrl").val()
 
 
 var mySong = {
+<<<<<<< HEAD
 	"title": title ,
 	"artist": artist,
 	"mp3-url":mp3,
 	"image-url":image,
+=======
+	"title":"Somebodys watching me",
+	"artist":"Rockwell",
+	"mp3url":"https://www.youtube.com/7YvAYIJSSZY",
+	"imageurl":"http://assets.nydailynews.com/polopoly_fs/1.3196820.1495758867!/img/httpImage/image.jpg_gen/derivatives/article_750/rockwell26f-1-web.jpg",
+>>>>>>> 1eb9cd7a4d12e6617e2f4d362da6f1c1d632aeb6
 }
 
 var myPlayList = [
@@ -38,12 +45,13 @@ var myPlayList = [
 	{
 		"title":"Sorry",
 		"artist":"Justin Bieber",
-		"mp3-url":"https://open.spotify.com/track/09CtPGIpYB4BrO8qb1RGsF",
+		"mp3url":"https://open.spotify.com/track/09CtPGIpYB4BrO8qb1RGsF",
 		"image-url":"http://assets-s3.usmagazine.com/uploads/assets/articles/93827-justin-biebers-sorry-choreographer-spills-video-style-secrets-parris-goebel/1445638548_justin-bieber-sorry-dancers-zoom.jpg",
 	}
 
 ]
 
+<<<<<<< HEAD
 	//READ All
 	function displaySongs(songs){
 		clearAllSongs()
@@ -64,9 +72,21 @@ var myPlayList = [
 			);
 	   	}
 	}
+=======
 
 
-});
+// DOCUMENT READY FUNCTION
+$( document ).ready(function() {
+  
+$('body').append("<p>Title: " + mySong.title + "</p>");
+$('body').append("<p>Artist: " + mySong.artist + "</p>");
+$('body').append("<p>MP3: " + mySong.mp3url + "</p>");
+$('body').append("<img src='" + mySong.imageurl + "'>");
+
+
+>>>>>>> 1eb9cd7a4d12e6617e2f4d362da6f1c1d632aeb6
+
+
 
 function displaylist(){
 
@@ -79,6 +99,7 @@ function clearList(){
 }
 
 function addSong(){
+<<<<<<< HEAD
  var newSong = {
 			"title": $('#title').val(),
 			"artist": $('#artist').val(),
@@ -94,3 +115,13 @@ function addSong(){
 		displaySongs(myPlayList)
 
 	});
+=======
+ 
+  
+  
+}
+
+	
+	
+});
+>>>>>>> 1eb9cd7a4d12e6617e2f4d362da6f1c1d632aeb6
